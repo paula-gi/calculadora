@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [value, setValue] = useState("");
+
+  const addInput = (input) => setValue(value + input);
+  const clear = () => setValue("");
+  const calculate = () => {
+    try {
+      setValue(eval(value));
+    } catch {
+      setValue("Error");
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="calculator">
+      <input type="text" value={value} readOnly />
+
+      <div className="buttons">
+        <button onClick={() => addInput("7")}>7</button>
+        <button onClick={() => addInput("8")}>8</button>
+        <button onClick={() => addInput("9")}>9</button>
+        <button onClick={() => addInput("/")}>÷</button>
+
+        <button onClick={() => addInput("4")}>4</button>
+        <button onClick={() => addInput("5")}>5</button>
+        <button onClick={() => addInput("6")}>6</button>
+        <button onClick={() => addInput("*")}>×</button>
+
+        <button onClick={() => addInput("1")}>1</button>
+        <button onClick={() => addInput("2")}>2</button>
+        <button onClick={() => addInput("3")}>3</button>
+        <button onClick={() => addInput("-")}>−</button>
+
+        <button onClick={() => addInput("0")}>0</button>
+        <button onClick={clear}>C</button>
+        <button onClick={calculate}>=</button>
+        <button onClick={() => addInput("+")}>+</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
+
