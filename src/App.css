@@ -10,7 +10,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: url("/img/springfield.jpg") center / cover no-repeat;
   font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
 }
@@ -26,12 +25,10 @@ body {
   width: 300px;
   padding: 20px;
   border-radius: 22px;
-
   background: linear-gradient(145deg, #ffd90f, #f4b400);
   box-shadow:
     0 18px 0 #cfa400,
     0 28px 40px rgba(0, 0, 0, 0.4);
-
   transform: rotateX(10deg);
 }
 
@@ -43,7 +40,6 @@ body {
   transform: translateX(-50%);
   width: 150px;
   height: 150px;
-
   background: url("/img/lisa.png") center / contain no-repeat;
   pointer-events: none;
 }
@@ -54,10 +50,8 @@ input {
   height: 55px;
   margin-bottom: 16px;
   padding-right: 12px;
-
   font-size: 26px;
   text-align: right;
-
   border: none;
   border-radius: 14px;
   background: #b7e4c7;
@@ -76,11 +70,9 @@ button {
   height: 55px;
   font-size: 18px;
   font-weight: bold;
-
   border: none;
   border-radius: 14px;
   cursor: pointer;
-
   box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
@@ -91,19 +83,16 @@ button:active {
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
-/* Colores Simpson */
+/* Colores */
 .num {
   background: #6ec6ff;
 }
-
 .op {
   background: #ff6f61;
 }
-
 .equal {
   background: #8bc34a;
 }
-
 .clear {
   background: #ff9800;
 }
