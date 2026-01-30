@@ -1,43 +1,111 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+/* Fondo Springfield */
 body {
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #f2efef;
-  font-family: Arial, sans-serif;
+
+  background: url("/img/springfield.jpg") center / cover no-repeat;
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
 }
 
+/* Escena 3D */
+.scene {
+  perspective: 1200px;
+}
+
+/* Calculadora */
 .calculator {
-  background: #2c2c2c;
+  position: relative;
+  width: 300px;
   padding: 20px;
-  border-radius: 10px;
-  width: 260px;
+  border-radius: 22px;
+
+  background: linear-gradient(145deg, #ffd90f, #f4b400);
+  box-shadow:
+    0 18px 0 #cfa400,
+    0 28px 40px rgba(0, 0, 0, 0.4);
+
+  transform: rotateX(10deg);
 }
 
+/* Lisa Simpson arriba */
+.lisa {
+  position: absolute;
+  top: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+
+  background: url("/img/lisa.png") center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Pantalla */
 input {
   width: 100%;
-  height: 50px;
-  font-size: 24px;
-  margin-bottom: 10px;
+  height: 55px;
+  margin-bottom: 16px;
+  padding-right: 12px;
+
+  font-size: 26px;
   text-align: right;
-  padding-right: 10px;
+
+  border: none;
+  border-radius: 14px;
+  background: #b7e4c7;
+  box-shadow: inset 0 4px 0 #6c9f8e;
 }
 
+/* Grid de botones */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
+/* Botón base */
 button {
-  height: 50px;
+  height: 55px;
   font-size: 18px;
+  font-weight: bold;
+
   border: none;
-  border-radius: 5px;
+  border-radius: 14px;
   cursor: pointer;
+
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-button:hover {
-  background: #aaa;
+/* Efecto presionado */
+button:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
 }
+
+/* Colores Simpson */
+.num {
+  background: #6ec6ff;
+}
+
+.op {
+  background: #ff6f61;
+}
+
+.equal {
+  background: #8bc34a;
+}
+
+.clear {
+  background: #ff9800;
+}
+
 
